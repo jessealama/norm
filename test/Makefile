@@ -1,7 +1,10 @@
 .PHONY: all test
 
 test-asd = ../norm-test.asd
-test-package = :norm-test
+package = norm
+package-keyword = :$(package)
+test-package = norm-test
+test-package-keyword = :$(test-package)
 
 lisp-files = $(wildcard *.lisp)
 editable-files = Makefile $(lisp-files)
