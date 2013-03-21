@@ -4,6 +4,10 @@
   (check-type package package)
   (loop :for s :being :the :external-symbols :of package :collect s))
 
+(defun internal-symbols (package)
+  (check-type package package)
+  (loop :for s :being :the :external-symbols :of package :collect s))
+
 (defun function-p (symbol)
   (check-type symbol symbol)
   (handler-case (symbol-function symbol)
@@ -15,6 +19,13 @@
 (defun exported-function-symbols (package)
   (remove-if-not #'function-p (external-symbols package)))
 
+(defun internal-function-symbols (package)
+  (remove-if-not #'function-p (internal-symbols package)))
+
 (test all-exported-functions-covered
   (is-false (remove-if #'function-covered-p
 		       (exported-function-symbols (find-package :norm)))))
+
+(test all-internal-functions-covered
+  (is-false (remove-if #'function-covered-p
+		       (internal-function-symbols (find-package :norm)))))
