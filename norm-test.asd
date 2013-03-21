@@ -8,4 +8,5 @@
   :components ((:module "test"
 			:serial t
 			:components ((:file "packages")
-				     (:file "coverage")))))
+				     (:file "coverage")
+				     (:file "formulas")))))
