@@ -18,4 +18,4 @@ endif
 test:
 	test -d test
 	test -r test/Makefile
-	+make -C test
+	+make -C test all
