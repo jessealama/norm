@@ -4,7 +4,7 @@
 (defun run-all-tests ()
   (reduce #'append (mapcar #'run (remove-if #'null (test-names))))
   ;                               ^^^^^^^^^^^^^^^^
-  ;                               huh?
+  ;                               huh? Not sure why NIL seems to be (always) present
   )
 
 (defun run-tests-quietly ()
