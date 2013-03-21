@@ -16,5 +16,5 @@
   (remove-if-not #'function-p (external-symbols package)))
 
 (test all-exported-functions-covered
-  (is (null (remove-if #'function-covered-p
-		       (exported-function-symbols (find-package :norm))))))
+  (is-false (remove-if #'function-covered-p
+		       (exported-function-symbols (find-package :norm)))))
