@@ -2,7 +2,10 @@
 (in-package :norm-test)
 
 (defun run-all-tests ()
-  (reduce #'append (mapcar #'run (remove-if #'null (test-names)))))
+  (reduce #'append (mapcar #'run (remove-if #'null (test-names))))
+  ;                               ^^^^^^^^^^^^^^^^
+  ;                               huh?
+  )
 
 (defun run-tests-quietly ()
   (let ((s (make-broadcast-stream)))
