@@ -6,4 +6,5 @@
   :maintainer "Jesse Alama <jesse.alama@gmail.com>"
   :depends-on ()
   :serial t
-  :components ((:file "packages")))
+  :components ((:file "packages")
+	       (:file "fol")))
