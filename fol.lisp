@@ -8,8 +8,8 @@
 
 (defclass atomic-formula (formula)
   ((predicate
-    :type string
-    :initform (error "To make an atomic formula, a predicate (string) is required.")
+    :type symbol
+    :initform (error "To make an atomic formula, a predicate (symbol) is required.")
     :initarg :predicate
     :reader predicate)
    (arguments
