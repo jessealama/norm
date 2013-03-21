@@ -1,4 +1,4 @@
-.PHONY: clean test
+.PHONY: clean test all
 
 asd-files = $(wildcard *.asd)
 editable-files = $(asd-files) Makefile README.mkd .gitignore
@@ -6,6 +6,8 @@ emacs-backups = $(addsuffix ~,$(editable-files))
 ccl-fasls = $(wildcard *.dx64fsl)
 plain-fasls = $(wildcard *.fasl)
 fasls = $(ccl-fasls) $(plain-fasls)
+
+all:
 
 clean:
 ifneq ($(strip $(emacs-backups)),)
