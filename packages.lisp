@@ -1,4 +1,5 @@
 (in-package :cl-user)
 
 (defpackage #:norm
-  (:use :cl))
+  (:use :cl)
+  (:export #:atomic-formula))
